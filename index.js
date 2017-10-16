@@ -10,6 +10,13 @@ module.exports = function kMers (s, k) {
       }
       i += 1
       return ret
+    },
+    all: function () {
+      var ret = []
+      for (var i = 0; i <= n - k; i += 1) {
+        ret.push(s.substr(i, k))
+      }
+      return ret
     }
   }
 }
