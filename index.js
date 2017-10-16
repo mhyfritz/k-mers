@@ -3,7 +3,7 @@ module.exports = function kMers (s, k) {
   var n = s.length
   return {
     next: function () {
-      var ret = { value: undefined, done: true }
+      var ret = { value: undefined, index: i, done: true }
       if (i <= n - k) {
         ret.value = s.substr(i, k)
         ret.done = false

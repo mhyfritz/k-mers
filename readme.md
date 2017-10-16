@@ -24,10 +24,11 @@ console.log(kMers)
 
 // iterate over 3-mers:
 kMers = kMerIter(s, k)
-var kMer = kMers.next() // { value: 'foo', done: false }
+var kMer = kMers.next() // { value: 'foo', index: 0, done: false }
 
-for (var i = 0; !kMer.done; i += 1, kMer = kMers.next()) {
-  console.log(k + '-mer at index', i, 'is', kMer.value)
+while (!kMer.done) {
+  console.log(k + '-mer at index', kMer.index, 'is', kMer.value)
+  kMer = kMers.next()
 }
 // 3-mer at index 0 is foo
 // 3-mer at index 1 is oob
