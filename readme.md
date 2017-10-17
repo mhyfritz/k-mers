@@ -35,6 +35,7 @@ while (!kMer.done) {
 // { value: 'oba', index: 2, done: false }
 // { value: 'bar', index: 3, done: false }
 
+// (re)set iterator to given index
 kMer = kMers.send(2)
 console.log(kMer)
 // { value: 'oba', index: 2, done: false }
