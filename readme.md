@@ -12,7 +12,7 @@ npm install k-mers
 ## Example
 
 ```js
-kMerIter = require('k-mers')
+var kMerIter = require('.')
 
 var s = 'foobar'
 var k = 3
@@ -24,14 +24,21 @@ console.log(kMers)
 
 // iterate over 3-mers:
 kMers = kMerIter(s, k)
-var kMer = kMers.next() // { value: 'foo', index: 0, done: false }
+var kMer = kMers.next()
 
 while (!kMer.done) {
-  console.log(k + '-mer at index', kMer.index, 'is', kMer.value)
+  console.log(kMer)
   kMer = kMers.next()
 }
-// 3-mer at index 0 is foo
-// 3-mer at index 1 is oob
-// 3-mer at index 2 is oba
-// 3-mer at index 3 is bar
+// { value: 'foo', index: 0, done: false }
+// { value: 'oob', index: 1, done: false }
+// { value: 'oba', index: 2, done: false }
+// { value: 'bar', index: 3, done: false }
+
+kMer = kMers.send(2)
+console.log(kMer)
+// { value: 'oba', index: 2, done: false }
+kMer = kMers.next()
+console.log(kMer)
+// { value: 'bar', index: 3, done: false }
 ```
