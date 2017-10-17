@@ -9,7 +9,7 @@ of a given string.
 npm install k-mers
 ```
 
-## Example
+## Usage
 
 ```js
 var kMerIter = require('.')
