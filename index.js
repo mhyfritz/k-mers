@@ -1,15 +1,12 @@
-module.exports = function kMers (s, k) {
+module.exports = function kmers (k, s) {
   var i = 0
   var n = s.length
 
   function next () {
-    var ret = { value: undefined, index: i, done: true }
-    if (i <= n - k) {
-      ret.value = s.substr(i, k)
-      ret.done = false
+    return {
+      value: i <= n - k ? s.substr(i, k) : undefined,
+      index: i++
     }
-    i += 1
-    return ret
   }
 
   function all () {
@@ -20,14 +17,13 @@ module.exports = function kMers (s, k) {
     return ret
   }
 
-  function send (j) {
+  function seek (j) {
     i = j
-    return next()
   }
 
   return {
     next: next,
     all: all,
-    send: send
+    seek: seek
   }
 }

@@ -12,34 +12,29 @@ npm install k-mers
 ## Usage
 
 ```js
-var kMerIter = require('.')
+var kmers = require('k-mers')
 
 var s = 'foobar'
 var k = 3
 
-// get all 3-mers in one shot:
-var kMers = kMerIter(s, k).all()
-console.log(kMers)
-// [ 'foo', 'oob', 'oba', 'bar' ]
+// get list of 3-mers in one shot:
+kmers(k, s).all() // [ 'foo', 'oob', 'oba', 'bar' ]
 
 // iterate over 3-mers:
-kMers = kMerIter(s, k)
-var kMer = kMers.next()
-
-while (!kMer.done) {
-  console.log(kMer)
-  kMer = kMers.next()
+iterKmers = kmers(k, s)
+while (true) {
+  var kmer = iterKmers.next()
+  if (kmer.value === undefined) {
+    break
+  }
+  console.log(kmer)
 }
-// { value: 'foo', index: 0, done: false }
-// { value: 'oob', index: 1, done: false }
-// { value: 'oba', index: 2, done: false }
-// { value: 'bar', index: 3, done: false }
+// { value: 'foo', index: 0 }
+// { value: 'oob', index: 1 }
+// { value: 'oba', index: 2 }
+// { value: 'bar', index: 3 }
 
 // (re)set iterator to given index
-kMer = kMers.send(2)
-console.log(kMer)
-// { value: 'oba', index: 2, done: false }
-kMer = kMers.next()
-console.log(kMer)
-// { value: 'bar', index: 3, done: false }
+iterKmers.seek(2)
+iterKmers.next() // { value: 'oba', index: 2 }
 ```
