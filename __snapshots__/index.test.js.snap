@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`1-mers of "foobar" via \`all\` 1`] = `
+Array [
+  "f",
+  "o",
+  "o",
+  "b",
+  "a",
+  "r",
+]
+`;
+
+exports[`2nd and 3rd 3-mer of "foobar" via \`seek\` 1`] = `
+Array [
+  Object {
+    "index": 1,
+    "value": "oob",
+  },
+  Object {
+    "index": 2,
+    "value": "oba",
+  },
+]
+`;
+
+exports[`3-mers of "foobar" via \`all\` 1`] = `
+Array [
+  "foo",
+  "oob",
+  "oba",
+  "bar",
+]
+`;
+
+exports[`3-mers of "foobar" via \`next\` 1`] = `
+Array [
+  Object {
+    "index": 0,
+    "value": "foo",
+  },
+  Object {
+    "index": 1,
+    "value": "oob",
+  },
+  Object {
+    "index": 2,
+    "value": "oba",
+  },
+  Object {
+    "index": 3,
+    "value": "bar",
+  },
+]
+`;
+
+exports[`6-mers of "foobar" via \`all\` 1`] = `
+Array [
+  "foobar",
+]
+`;

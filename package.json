@@ -1,16 +1,26 @@
 {
   "name": "k-mers",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Enumerate k-mers of a given string.",
   "main": "index.js",
   "keywords": [],
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "npm test",
+    "lint": "standard",
+    "lint:fix": "standard --fix"
+  },
   "author": {
     "name": "Markus Hsi-Yang Fritz",
     "email": "markus.h.y.fritz@gmail.com"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/mhyfritz/k-mers.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mhyfritz/k-mers.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "standard": "^10.0.3"
+  }
 }
