@@ -1,6 +1,6 @@
 {
   "name": "k-mers",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Enumerate k-mers of a given string.",
   "main": "index.js",
   "keywords": [],
